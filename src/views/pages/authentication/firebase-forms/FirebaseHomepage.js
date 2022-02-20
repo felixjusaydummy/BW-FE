@@ -60,14 +60,10 @@ import Ccmaster from 'ui-component/ccmaster';
 import Accountlogo from 'ui-component/accountlogo';
 import Withdrawlogo from 'ui-component/withdrawlogo';
 import Transferlogo from 'ui-component/transferlogo';
-import Addmoneylogo from 'ui-component/addmoneylogo';
-import Budgetlogo from 'ui-component/budgetlogo';
-import Investmentlogo from 'ui-component/investmentlogo';
-import Paymentlogo from 'ui-component/paymentlogo';
-import Transferslogo from 'ui-component/transferslogo';
-import Rewardslogo from 'ui-component/rewardslogo';
-import Historylogo from 'ui-component/historylogo';
 import Logosmall from 'ui-component/logosmall';
+import DigitalID from 'ui-component/digital-id';
+import DigitalWallet from 'ui-component/digital-wallet';
+import LoanApp from 'ui-component/loan-app';
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -350,71 +346,47 @@ const FirebaseHomepage = (props, { ...others }) => {
                                 p: 2
                             }}
                         >
-                            <Stack direction="row" alignItems="center" justifyContent="center" spacing={4}>
+                            <Stack direction="row" alignItems="center" justifyContent="center" spacing={1}>
                                 <Stack direction="column" alignItems="center" justifyContent="center" spacing={1}>
                                     <Button
-                                        sx={{
-                                            backgroundColor: 'white',
-                                            color: 'black',
-                                            size: 'small',
-                                            width: '60px',
-                                            height: '60px'
-                                        }}
                                         variant="Outlined"
                                         type="submit"
                                         component={Link}
                                         to="/pages/homescreen"
                                     >
                                         <Stack direction="column" alignItems="center" justifyContent="center" spacing={1}>
-                                            <Accountlogo />
+                                            <DigitalWallet />
                                         </Stack>
                                     </Button>
-                                    <Typography color="white">
-                                        <center>Digital Wallet</center>
+                                    <Typography color="white">Wallet
                                     </Typography>
                                 </Stack>
                                 <Stack direction="column" alignItems="center" justifyContent="center" spacing={1}>
                                     <Button
-                                        sx={{
-                                            backgroundColor: 'white',
-                                            color: 'black',
-                                            size: 'small',
-                                            width: '60px',
-                                            height: '60px'
-                                        }}
                                         variant="Outlined"
                                         type="submit"
                                         component={Link}
                                         to="/pages/homescreen/loan"
                                     >
                                         <Stack alignItems="row" justifyContent="center" spacing={1}>
-                                            <Transferlogo />
+                                            <LoanApp />
                                         </Stack>
                                     </Button>
-                                    <Typography color="white">
-                                        <center>Loan</center>
+                                    <Typography color="white">Loan
                                     </Typography>
                                 </Stack>
                                 <Stack direction="column" alignItems="center" justifyContent="center" spacing={1}>
                                     <Button
-                                        sx={{
-                                            backgroundColor: 'white',
-                                            color: 'black',
-                                            size: 'small',
-                                            width: '60px',
-                                            height: '60px'
-                                        }}
                                         variant="Outlined"
                                         type="submit"
                                         component={Link}
                                         to="/pages/homescreen"
                                     >
                                         <Stack alignItems="row" justifyContent="center" spacing={1}>
-                                            <Withdrawlogo />
+                                            <DigitalID />
                                         </Stack>
                                     </Button>
-                                    <Typography color="white">
-                                        <center>Digital Cards</center>
+                                    <Typography color="white">IDs
                                     </Typography>
                                 </Stack>
                             </Stack>
