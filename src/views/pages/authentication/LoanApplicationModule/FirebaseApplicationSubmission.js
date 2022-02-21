@@ -32,6 +32,7 @@ import { Formik } from "formik";
 import useScriptRef from "hooks/useScriptRef";
 import AnimateButton from "ui-component/extended/AnimateButton";
 import ListOfIDs from "./ListOfIDs";
+import FirebaseModalTAC from './FirebaseModalTAC';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -73,16 +74,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 700,
-  height: 300,
-  bgcolor: "#e0f2f1",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
+  position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: '#e0f2f1',
+    border: '1px solid #000',
+    boxShadow: 24,
+    p: 5,
+    px: 4,
+    pb: 3,
+    minWidth: 500,
+    alignItems: 'center',
+    justifyContent: 'center'
 };
 
 //= ==========================|| FIREBASE - LOAN APPLICATION FORM - APPLICATION SUBMISSION ||===========================//
@@ -105,6 +110,11 @@ const FirebaseApplicationSubmission = ({ ...others }) => {
   const handleClose = () => setOpen(false);
 
   const [acceptTerms, setAcceptterms] = React.useState(false);
+
+  const [bopen, setBOpen] = React.useState(false);
+  const handleBOpen = () => setBOpen(true);
+  const handleBClose = () => setBOpen(false);
+  
 
   return (
     <>
@@ -437,6 +447,7 @@ const FirebaseApplicationSubmission = ({ ...others }) => {
             <Grid container>
               <Box sx={{ m: 1 }} />
             </Grid>
+
             <Stack alignItems="center" justifyContent="center">
               <Typography sx={{ fontSize: 12.5 }} variant="h4" color="#424242">
                 IMPORTANT: By submitting this Loan Application Form, you are
@@ -450,7 +461,7 @@ const FirebaseApplicationSubmission = ({ ...others }) => {
                     <Checkbox
                       required
                       checked={acceptTerms}
-                      onChange={(event) => setAcceptterms(event.target.checked)}
+                      onChange={(event) => {setAcceptterms(event.target.checked);handleBOpen()}}
                       name="acceptTerms"
                       color="primary"
                     />
@@ -460,7 +471,20 @@ const FirebaseApplicationSubmission = ({ ...others }) => {
                       I agree with Terms and Conditions of this as set by BPI.
                     </Typography>
                   }
+                  
                 />
+                <Modal open={bopen} onClose={handleBClose}>
+                          <Box sx={style}>
+                            <Stack alignItems="center" justifyContent="center">
+                          <Typography variant="h4">
+                          Terms & Conditions
+                          </Typography>
+                          <Box sx={{ m: 1 }} />
+                          <FirebaseModalTAC />
+                      </Stack>
+
+                  </Box>
+                </Modal>
               </Grid>
             </Stack>
             <Box sx={{ m: 1 }} />

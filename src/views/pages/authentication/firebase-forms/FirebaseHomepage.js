@@ -385,7 +385,7 @@ const FirebaseHomepage = (props, { ...others }) => {
                                         variant="Outlined"
                                         type="submit"
                                         component={Link}
-                                        to="/pages/homescreen/loan"
+                                        to="/pages/homescreen/loanhomepage"
                                     >
                                         <Stack alignItems="row" justifyContent="center" spacing={1}>
                                             <Transferlogo />
@@ -393,8 +393,10 @@ const FirebaseHomepage = (props, { ...others }) => {
                                     </Button>
                                     <Typography color="white">
                                         <center>Loan</center>
+                                        <center>&nbsp;&nbsp;&nbsp;</center>
                                     </Typography>
                                 </Stack>
+                                
                                 <Stack direction="column" alignItems="center" justifyContent="center" spacing={1}>
                                     <Button
                                         sx={{

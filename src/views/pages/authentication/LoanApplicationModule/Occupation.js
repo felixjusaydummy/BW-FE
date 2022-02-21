@@ -49,7 +49,7 @@ const Occupation = () => {
                                         <IconButton
                                             sx={{ backgroundColor: 'white', color: 'black', size: 'large' }}
                                             variant="contained"
-                                            href="/pages/loanapplication/loanpurpose"
+                                            href="/pages/homescreen/loanhomepage"
                                             size="medium"
                                         >
                                             <ArrowBackIosNewIcon />
@@ -120,7 +120,7 @@ const Occupation = () => {
                                                             fontSize="16px"
                                                             textAlign={matchDownSM ? 'center' : ''}
                                                         >
-                                                            Employment Status
+                                                         Status
                                                         </Typography>
                                                     </Stack>
                                                 </Grid>

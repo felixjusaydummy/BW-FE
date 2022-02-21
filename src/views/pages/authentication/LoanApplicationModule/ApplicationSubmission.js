@@ -43,7 +43,7 @@ const ApplicationSubmission = () => {
                                     <IconButton
                                         sx={{ backgroundColor: 'white', color: 'black', size: 'large' }}
                                         variant="contained"
-                                        href="/pages/loanapplication/loanpurpose"
+                                        href="/pages/loanapplication/DigialAsset"
                                         size="medium"
                                     >
                                         <ArrowBackIosNewIcon />

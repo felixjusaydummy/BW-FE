@@ -278,7 +278,7 @@ const FirebaseExistingLoan = ({ ...others }) => {
                                     variant="contained"
                                     color="secondary"
                                     component={Link}
-                                    to="/pages/loanapplication/applicationsubmission"
+                                    to="/pages/loanapplication/loanapplicationform"
                                 >
                                     Continue
                                 </Button>

@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
-import { Box, Button, Grid, Stack, Typography, Avatar, useMediaQuery } from '@material-ui/core';
+import { Box, Button, Grid, Stack, Typography, Avatar, useMediaQuery,Modal } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 
 // project imports
 import useScriptRef from 'hooks/useScriptRef';
-import FirebaseModalTAC from './FirebaseModalTAC';
+import FirebaseModalDigitalAssetTAC from './FirebaseModalDigitalAssetTAC';
+
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -82,40 +83,49 @@ const FirebaseOccupation = (props, { ...others }) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const [bopen, setBOpen] = React.useState(false);
+  const handleBOpen = () => setBOpen(true);
+  const handleBClose = () => setBOpen(false);
 
     return (
         <>
             <Grid container>
                 <Grid
-                    item
-                    sx={12}
-                    container
-                    alignItems="center"
-                    justifyContent="center"
-                    backgroundColor="#076241"
-                    borderRadius="10px"
-                    spacing="2"
-                    style={{ marginBottom: "20px" }}
-                    sx={{ height: '180px', width: '390px' }}
+                     item
+                     sx={12}
+                     container
+                     alignItems="center"
+                     justifyContent="center"
+                     backgroundColor="#076241"
+                     borderRadius="10px"
+                     spacing="2"
+                     style={{ marginBottom: '15px', padding: '15px' }}
                 >
                     <Grid item xs={11} 
                         style={{ marginRight: "-10px", marginTop: "10px" }}>
                         <Box
                             sx={{
-                                mb: 2
+                                mb: 3
                             }}
                         >
                             <Typography sx={{ fontSize: '14px' }} variant="subtitle0" color="white">
                                 Please select one:
                             </Typography>
                         </Box>
+                        
                     </Grid>
-                    <Grid item sx={12} container alignItems="center" justifyContent="center" style={{ marginTop: "-20px", marginBottom: "13px" }}>
+                    <Grid item 
+                    sx={12} 
+                    container 
+                    alignItems="center" 
+                    justifyContent="center" 
+                    style={{ marginTop: "-20px", marginBottom: "13px" }}>
+                        
                         <Box m="auto">
                             <Stack alignItems="row" justifyContent="left" spacing={1}>
                                 <Avatar sx={{ height: '30px', width: '200px', backgroundColor: 'white' }} variant="rounded">
                                     <Button
-                                        href="/pages/loanapplication/loanapplicationform"
+                                        href="/pages/loanapplication/loanpurpose"
                                         onClick={handleOpen}
                                         sx={{ backgroundColor: 'white', color: 'black' }}
                                     >
@@ -131,19 +141,51 @@ const FirebaseOccupation = (props, { ...others }) => {
                                 />
                                 <Avatar sx={{ height: '30px', width: '200px', backgroundColor: 'white' }} variant="rounded">
                                     <Button
-                                        href="/pages/loanapplication/loanapplicationform"
+                                        href="/pages/loanapplication/loanpurpose"
                                         onClick={handleOpen}
                                         sx={{ backgroundColor: 'white', color: 'black' }}
                                     >
                                         <Typography variant="subtitle1" sx={{ fontSize: 15, fontWeight: 'bold' }}>
-                                            Self-Employed
+                                            Unemployed
+                                        </Typography>
+                                    </Button>
+                                    
+                                </Avatar>
+                                <Box
+                                    sx={{
+                                        mb: 1
+                                    }}
+                                />
+                                <Avatar sx={{ height: '30px', width: '200px', backgroundColor: 'white' }} variant="rounded">
+                                    <Button
+                                        href="/pages/loanapplication/loanpurpose"
+                                        onClick={handleOpen}
+                                        sx={{ backgroundColor: 'white', color: 'black' }}
+                                    >
+                                        <Typography variant="subtitle1" sx={{ fontSize: 15, fontWeight: 'bold' }}>
+                                            Small-business Owner
+                                        </Typography>
+                                    </Button>
+                                </Avatar>
+                                <Box
+                                    sx={{
+                                        mb: 1
+                                    }}
+                                />
+                                <Avatar sx={{ height: '30px', width: '200px', backgroundColor: 'white' }} variant="rounded">
+                                    <Button
+                                        href="/pages/loanapplication/LoanPurposeDA"
+                                        onClick={handleOpen}
+                                        sx={{ backgroundColor: 'white', color: 'black' }}
+                                    >
+                                        <Typography variant="subtitle1" sx={{ fontSize: 15, fontWeight: 'bold' }}>
+                                            Digital Asset Owner
                                         </Typography>
                                     </Button>
                                 </Avatar>
                             </Stack>
                         </Box>
                     </Grid>
-
                 </Grid>
             </Grid>
         </>

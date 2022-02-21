@@ -112,7 +112,8 @@ const LoanAppForm = () => {
                                                         fontSize="16px"
                                                         textAlign={matchDownSM ? 'center' : ''}
                                                     >
-                                                        Property Information
+                                                        Property Information 
+                                                       `
                                                     </Typography>
                                                 </Stack>
                                             </Grid>
