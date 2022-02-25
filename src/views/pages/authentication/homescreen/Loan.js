@@ -50,7 +50,7 @@ const Loan = () => {
                                         <IconButton
                                             sx={{ backgroundColor: 'white', color: 'black', size: 'large' }}
                                             variant="contained"
-                                            href="homescreen"
+                                            href="loanhomepage"
                                             size="medium"
                                             style={{ marginTop: '15px', marginBottom: '15px' }}
                                         >
@@ -101,6 +101,14 @@ const Loan = () => {
                                                         variant={matchDownSM ? 'h3' : 'h2'}
                                                     >
                                                         <center>Loan Application</center>
+                                                    </Typography>
+                                                    <Typography
+                                                        variant="h3"
+                                                        fontStyle="bold"
+                                                        fontSize="16px"
+                                                        textAlign={matchDownSM ? 'center' : ''}
+                                                        >
+                                                        Choose your lenders
                                                     </Typography>
                                                 </Stack>
                                             </Grid>

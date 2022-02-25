@@ -98,7 +98,7 @@ const FirebaseCheckbox = ({ ...others }) => {
                                     variant="contained"
                                     color="secondary"
                                     component={Link}
-                                    to="/pages/loanapplication/loanpurpose"
+                                    to="/pages/loanapplication/DigitalAsset"
                                 >
                                     Continue
                                 </Button>

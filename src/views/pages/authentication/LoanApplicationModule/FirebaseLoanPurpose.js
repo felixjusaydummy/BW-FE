@@ -27,6 +27,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import Cottage from '@material-ui/icons/Cottage';
 import Commute from '@material-ui/icons/Commute';
 import HousingAutoReqs from './HousingAutoReqs';
+import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 
 // project imports
 import useScriptRef from 'hooks/useScriptRef';
@@ -132,7 +133,7 @@ const FirebaseLoanPurpose = (props, { ...others }) => {
                                 <Typography sx={{ fontWeight: 'bold' }} color="white">
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                 </Typography>
-                                <Button href="/pages/loanapplication/employmentstatus" sx={{ backgroundColor: 'white', color: 'black' }}>
+                                <Button href="/pages/loanapplication/personalinformation" sx={{ backgroundColor: 'white', color: 'black' }}>
                                     <Cottage />
                                 </Button>
                                 <Typography sx={{ fontWeight: 'bold' }} color="white">
@@ -148,7 +149,7 @@ const FirebaseLoanPurpose = (props, { ...others }) => {
                                 <Typography sx={{ fontWeight: 'bold' }} color="white">
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                 </Typography>
-                                <Button href="/pages/loanapplication/employmentstatus" sx={{ backgroundColor: 'white', color: 'black' }}
+                                <Button href="/pages/loanapplication/collateral" sx={{ backgroundColor: 'white', color: 'black' }}
                                     style={{ marginBottom: "15px" }} >
                                     <Commute />
                                 </Button>
@@ -156,7 +157,20 @@ const FirebaseLoanPurpose = (props, { ...others }) => {
                                     Car Loan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </Typography>
                             </Stack>
+                            <Stack direction="row" alignItems="center" justifyContent="flex-start" spacing={2.5}>
+                                <Typography sx={{ fontWeight: 'bold' }} color="white">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                </Typography>
+                                <Button href="/pages/loanapplication/collateral" sx={{ backgroundColor: 'white', color: 'black' }}
+                                    style={{ marginBottom: "15px" }} >
+                                    <LocalAtmIcon/>
+                                </Button>
+                                <Typography sx={{ fontWeight: 'bold' }} color="white">
+                                    Cash Loan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </Typography>
+                            </Stack>
                         </Box>
+                        
                     </Grid>
                     <Stack direction="column">
                         <Typography style={{ padding: "15px, 15px" }} color="white" fontSize="0.65rem" variant="h6">Check the Pre-processing requirements for:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Typography>

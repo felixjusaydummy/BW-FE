@@ -72,12 +72,10 @@ const FirebaseLoanApplicationForm = ({ ...others }) => {
 
   const [propertytype, setPropertytype] = React.useState("");
   const [address, setAddress] = React.useState("");
-  const [developer, setDeveloper] = React.useState("");
-  const [sellingprice, setSellingprice] = React.useState(0);
+  const [sellingprice, setSellingprice] = React.useState("");
   const [loanamount, setLoanamount] = React.useState("");
   const [loanterm, setLoanterm] = React.useState("");
   const [grossmincome, setGrossmincome] = React.useState("");
-  const isValid = sellingprice > 1000000 || sellingprice < 100000;
 
   return (
     <>
@@ -85,7 +83,6 @@ const FirebaseLoanApplicationForm = ({ ...others }) => {
         initialValues={{
           propertytype: "",
           address: "",
-          developer: "",
           sellingprice: "",
           loanamount: "",
           loanterm: "",
@@ -93,9 +90,8 @@ const FirebaseLoanApplicationForm = ({ ...others }) => {
           submit: null,
         }}
         validationSchema={Yup.object().shape({
-          // assettype: Yup.string().max(255).required(" "),
+          propertytype: Yup.string().max(255).required(" "),
           address: Yup.string().max(255).required(" "),
-          developer: Yup.string().max(255).required(" "),
           sellingprice: Yup.string().max(255).required(" "),
           loanamount: Yup.string().max(255).required(" "),
           loanterm: Yup.string().max(255).required(" "),
@@ -152,71 +148,18 @@ const FirebaseLoanApplicationForm = ({ ...others }) => {
                   setPropertytype(e.target.value);
                 }}
               >
-                <MenuItem value="duplex">Duplex</MenuItem>
-                <MenuItem value="rowhouse">Rowhouse</MenuItem>
+                <MenuItem value="houseandlot">House and Lot</MenuItem>
                 <MenuItem value="condo">Condominium</MenuItem>
                 <MenuItem value="townhouse">Townhouse</MenuItem>
-                <MenuItem value="singleDetached">Single Detached</MenuItem>
-                <MenuItem value="singleattached">Single Attached</MenuItem>
-                
+                <MenuItem value="lot">Vacant Lot</MenuItem>
+                <MenuItem value="lot">Digital Asset</MenuItem>
               </TextField>
             </FormControl>
             <FormControl
               variant="outlined"
               fullWidth
-              error={Boolean(touched.address && errors.address)}
-              className={classes.loanInput}
-            >
-              <TextField
-                required
-                style={{ marginTop: "3px", marginBottom: "2px" }}
-                id="outlined-adornment-address"
-                label="Property Location"
-                margin="normal"
-                name="address"
-                value={address}
-                onBlur={handleBlur}
-                error={Boolean(touched.address && errors.address)}
-                onChange={(e) => {
-                  handleChange(e);
-                  setAddress(e.target.value);
-                }}
-              />
-              <FormHelperText id="standard-weight-helper-text-cnumber-register">
-                e.g. House no. or Unit no. Street Name, Brgy.
-              </FormHelperText>
-            </FormControl>
-            <FormControl
-              variant="outlined"
-              fullWidth
-              error={Boolean(touched.address && errors.address)}
-              className={classes.loanInput}
-            >
-              <TextField
-                required
-                style={{ marginTop: "-6px", marginBottom: "2px" }}
-                id="outlined-adornment-developer"
-                label="Name of Developer"
-                margin="normal"
-                name="developer"
-                value={developer}
-                onBlur={handleBlur}
-                error={Boolean(touched.developer && errors.developer)}
-                onChange={(e) => {
-                  handleChange(e);
-                  setDeveloper(e.target.value);
-                }}
-              />
-              
-            </FormControl>
-
-
-            <FormControl
-              variant="outlined"
-              fullWidth
               error={Boolean(touched.sellingprice && errors.sellingprice)}
               className={classes.loanInput}
-              style={{ marginTop: "-6px", marginBottom: "2px" }}
             >
               <CurrencyTextField
                 required
@@ -232,47 +175,64 @@ const FirebaseLoanApplicationForm = ({ ...others }) => {
                 textAlign="left"
                 value={sellingprice}
                 currencySymbol=""
-                error={Boolean(touched.sellingprice && errors.sellingprice) || isValid}
-                helperText={isValid && "Enter amount from ₱100,000 to ₱1,000,000"}
+                error={Boolean(touched.sellingprice && errors.sellingprice)}
                 className={classes.loanInput}
-                onChange={(event, sellingprice) => {
+                onChange={(event, sellingprice) =>
                   setSellingprice(sellingprice)
-                  setLoanamount(sellingprice*.8)
-              }
                 }
               />
             </FormControl>
-            
+            <FormControl
+              variant="outlined"
+              fullWidth
+              error={Boolean(touched.address && errors.address)}
+              className={classes.loanInput}
+            >
+              <TextField
+                required
+                style={{ marginTop: "3px", marginBottom: "2px" }}
+                id="outlined-adornment-address"
+                label="Address"
+                margin="normal"
+                name="address"
+                value={address}
+                onBlur={handleBlur}
+                error={Boolean(touched.address && errors.address)}
+                onChange={(e) => {
+                  handleChange(e);
+                  setAddress(e.target.value);
+                }}
+              />
+              <FormHelperText id="standard-weight-helper-text-cnumber-register">
+                e.g. House no. or Unit no. Street Name, Brgy.
+              </FormHelperText>
+            </FormControl>
             <FormControl
               fullWidth
               error={Boolean(touched.loanamount && errors.loanamount)}
               className={classes.loanInput}
-              style={{ marginTop: "-6px", marginBottom: "2px" }}
             >
               <CurrencyTextField
-              
                 variant="outlined"
                 required
                 inputProps={{
                   classes: { notchedOutline: classes.notchedOutline },
                 }}
                 fullWidth
-                label="Loanable amount"
+                label="Enter desired loan amount"
                 margin="normal"
                 name="loanamount"
                 type="text"
                 textAlign="left"
                 value={loanamount}
                 currencySymbol=""
-                error={Boolean(touched.loanamount && errors.loanamount) }
-                
+                error={Boolean(touched.loanamount && errors.loanamount)}
                 className={classes.loanInput}
                 onChange={(event, loanamount) => setLoanamount(loanamount)}
-                disabled
               />
-              {/* <FormHelperText id="standard-weight-helper-text-loan-amount">
+              <FormHelperText id="standard-weight-helper-text-loan-amount">
                 Enter amount from ₱100,000 to ₱1,000,000
-              </FormHelperText> */}
+              </FormHelperText>
             </FormControl>
             <Stack spacing={5}>
               <TextField
@@ -328,7 +288,6 @@ const FirebaseLoanApplicationForm = ({ ...others }) => {
                     !(
                       propertytype &&
                       address &&
-                      developer &&
                       sellingprice &&
                       loanamount &&
                       loanterm
@@ -340,7 +299,7 @@ const FirebaseLoanApplicationForm = ({ ...others }) => {
                   variant="contained"
                   color="secondary"
                   component={Link}
-                  to="/pages/loanapplication/applicationsubmission"
+                  to="/pages/loanapplication/personalinformation"
                 >
                   Continue
                 </Button>

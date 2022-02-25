@@ -51,7 +51,7 @@ const LoanPurpose = () => {
                                         <IconButton
                                             sx={{ backgroundColor: 'white', color: 'black', size: 'large' }}
                                             variant="contained"
-                                            href="/pages/homescreen/loan"
+                                            href="/pages/loanapplication/employmentstatus"
                                             size="medium"
                                         >
                                             <ArrowBackIosNewIcon />

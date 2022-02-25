@@ -158,7 +158,7 @@ const FirebasePersonalInfo = ({ ...others }) => {
                                 required
                                 style={{ marginTop: '3px', marginBottom: '2px' }}
                                 id="outlined-adornment-address"
-                                label="Address"
+                                label="Current Address"
                                 margin="normal"
                                 name="address"
                                 value={address}

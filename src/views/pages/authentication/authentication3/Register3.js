@@ -50,7 +50,7 @@ const Register = () => {
                                                         Sign up
                                                     </Typography>
                                                     <Typography variant="caption" fontSize="16px" textAlign={matchDownSM ? 'center' : ''}>
-                                                        Input required fields
+                                                        Enter your credentials to continue
                                                     </Typography>
                                                 </Stack>
                                             </Grid>

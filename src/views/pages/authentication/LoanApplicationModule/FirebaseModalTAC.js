@@ -130,7 +130,7 @@ function FirebaseModalTAC() {
                 </Box>
             </Grid>
             <Grid container alignItems="center" justifyItems="center">
-                <FirebaseCheckbox />
+                {/* <FirebaseCheckbox /> */}
             </Grid>
         </>
     );

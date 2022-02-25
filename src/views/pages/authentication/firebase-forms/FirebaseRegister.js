@@ -185,7 +185,7 @@ const FirebaseRegister = ({ ...others }) => {
             // backid: backid,
             email: email,
             username: email,
-            password: password
+            password: password,
         }).then(function (response) {
             console.log("Registration was successful ", response.data)
             setSuccessOpen(true)
@@ -434,7 +434,7 @@ const FirebaseRegister = ({ ...others }) => {
                                 id="standard-weight-helper-text-cnumber-register"
                                 style={{ marginTop: '1px', marginBottom: '1px', padding: '5px 15px' }}
                             >
-                                e.g. (+639123456789) supports PH numbers only.
+                                e.g. (09123456789) supports PH numbers only.
                             </FormHelperText>
                         </Stack>
                         <Stack spacing={1}>

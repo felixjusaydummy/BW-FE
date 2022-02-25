@@ -32,12 +32,19 @@ const HomeLoan = Loadable(lazy(() => import('views/pages/authentication/homescre
 const Occupation = Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/Occupation'))); //
 const LoanAppForm = Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/LoanAppForm'))); //
 const LoanPurpose = Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/LoanPurpose'))); //
+const LoanPurposeDA = Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/LoanPurposeDA'))); //
 const PersonalInfo = Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/PersonalInfo'))); //
+const PersonalInfoDA = Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/PersonalInfoDA'))); //
 const EmploymentInfo = Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/EmploymentInfo')));
 const ExistingLoan = Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/ExistingLoan')));
 const CoBorrowerInfo = Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/CoBorrowerInfo'))); //
 const ApplicationSubmission = Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/ApplicationSubmission')));
 const SEApplicationSubmission = Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/SEApplicationSubmission')));
+const DigitalAssetInformation= Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/DigitalAsset')));
+const TypeofCollateral= Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/Collateral')));
+const LoanHomepage= Loadable(lazy(() => import('views/pages/authentication/homescreen/Loanhomepage')));
+const LoanHistory= Loadable(lazy(() => import('views/pages/authentication/LoanApplicationModule/LoanHistory')));
+
 
 
 // ===========================|| AUTHENTICATION ROUTING ||=========================== //
@@ -131,8 +138,16 @@ const AuthenticationRoutes = {
             element: <LoanPurpose />
         },
         {
+            path: '/pages/loanapplication/loanpurposeda',
+            element: <LoanPurposeDA />
+        },
+        {
             path: '/pages/loanapplication/personalinformation',
             element: <PersonalInfo />
+        },
+        {
+            path: '/pages/loanapplication/personalinformationda',
+            element: <PersonalInfoDA />
         },
         {
             path: '/pages/loanapplication/employmentinformation',
@@ -161,7 +176,29 @@ const AuthenticationRoutes = {
         {
             path: '/pages/withdrawal/confirmation',
             element: <WithdrawConfirmation />
-        }
+        },
+        {
+            path: '/pages/loanapplication/DigitalAsset',
+            element: <DigitalAssetInformation />
+        },
+        {
+            path: '/pages/loanapplication/Collateral',
+            element: <TypeofCollateral />
+        },
+        {
+            path: '/pages/homescreen/Loanhomepage',
+            element: <LoanHomepage />
+        },
+        {
+            path: '/pages/loanapplication/loanhistory',
+            element: <LoanHistory />
+        },
+        
+    
+    
+        
+        
+        
     ]
 };
 

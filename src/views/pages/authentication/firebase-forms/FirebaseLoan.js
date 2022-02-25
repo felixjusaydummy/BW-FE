@@ -21,6 +21,7 @@ import {
   Stack,
   Typography,
   Avatar,
+  useMediaQuery,
 } from "@material-ui/core";
 
 // third party
@@ -36,15 +37,18 @@ import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
 import Google from "assets/images/icons/social-google.svg";
-
+import { useTheme } from '@material-ui/core/styles';
 import LinkIcon from "@mui/icons-material/Link";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import RedeemIcon from "@mui/icons-material/Redeem";
 import Bpilogo from "ui-component/bpilogo";
 import Bdologo from "ui-component/bdologo";
-import FirebaseModalTAC from "../LoanApplicationModule/FirebaseModalTAC";
+import HomeCreditLogo from "ui-component/homecreditlogo";
+import CashaloLogo from "ui-component/cashalologo";
+//import FirebaseModalTAC from "../LoanApplicationModule/FirebaseModalTAC";
 
 // style constant
+
 const useStyles = makeStyles((theme) => ({
   redButton: {
     fontSize: "1rem",
@@ -95,11 +99,15 @@ const style = {
   p: 4,
 };
 
+
+
+
 //= ===========================|| FIREBASE - ACCOUNT ||============================//
 
 const FirebaseLoan = (props, { ...others }) => {
+  const theme = useTheme();
   const classes = useStyles();
-
+  const matchDownSM = useMediaQuery(theme.breakpoints.down('sm'));
   const customization = useSelector((state) => state.customization);
   const scriptedRef = useScriptRef();
   const [checked, setChecked] = React.useState(true);
@@ -118,6 +126,7 @@ const FirebaseLoan = (props, { ...others }) => {
   };
   return (
     <>
+                                        
       <Grid container>
         <Grid
           item
@@ -136,7 +145,7 @@ const FirebaseLoan = (props, { ...others }) => {
                 mb: 2,
               }}
             >
-              <Typography variant="subtitle0" color="white">Please select a bank:</Typography>
+              <Typography variant="subtitle0" color="white">Banks:</Typography>
             </Box>
           </Grid>
           <Grid
@@ -157,7 +166,13 @@ const FirebaseLoan = (props, { ...others }) => {
                   }}
                   variant="rounded"
                 >
-                  <Button onClick={handleOpen}>
+                  <Button onClick={handleOpen}
+                   href="/pages/loanapplication/employmentstatus"
+                   sx={{ backgroundColor: 'white', color: 'black' }}
+                   >
+                  <Bpilogo />
+                  </Button>
+                  {/* <Button onClick={handleOpen}>
                     <Bpilogo />
                     <Modal open={open} onClose={handleClose}>
                       <Box sx={style}>
@@ -170,6 +185,23 @@ const FirebaseLoan = (props, { ...others }) => {
                         </Stack>
                       </Box>
                     </Modal>
+                  </Button> */}
+                </Avatar>
+                
+                <Avatar
+                  sx={{
+                    height: "50px",
+                    width: "150px",
+                    backgroundColor: "white",
+                  }}
+                  variant="rounded"
+                  
+                >
+                  <Button onClick={handleOpen}
+                   href="/pages/loanapplication/employmentstatus"
+                   sx={{ backgroundColor: 'white', color: 'black' }}
+                   >
+                  <Bdologo />
                   </Button>
                 </Avatar>
                 <Avatar
@@ -180,12 +212,13 @@ const FirebaseLoan = (props, { ...others }) => {
                   }}
                   variant="rounded"
                 >
-                  <Bdologo />
+                  View All
                 </Avatar>
               </Stack>
             </Box>
           </Grid>
-          <Grid
+          
+          {/* <Grid
             item
             sx={12}
             container
@@ -206,7 +239,124 @@ const FirebaseLoan = (props, { ...others }) => {
                 Manage Linked Accounts
               </Button>
             </Box>
+          </Grid> */}
+        </Grid>
+      </Grid>
+
+
+    {/* ======Other Lenders===== */}
+      <Grid container>
+        <Grid
+          item
+          sx={12}
+          container
+          alignItems="center"
+          justifyContent="center"
+          backgroundColor="#076241"
+          borderRadius="10px"
+          spacing="2"
+          style={{ marginBottom: '15px', padding: '15px' }}
+        >
+          <Grid item xs={11}>
+            <Box
+              sx={{
+                mb: 2,
+              }}
+            >
+              <Typography variant="subtitle0" color="white">Other Lenders:</Typography>
+            </Box>
           </Grid>
+          <Grid
+            item
+            sx={12}
+            container
+            alignItems="center"
+            justifyContent="center"
+            style={{ marginTop: "-10px", padding: '15px' }}
+          >
+            <Box m="auto">
+              <Stack alignItems="row" justifyContent="left" spacing={1}>
+                <Avatar
+                  sx={{
+                    height: "50px",
+                    width: "150px",
+                    backgroundColor: "white",
+                  }}
+                  variant="rounded"
+                >
+                  <Button onClick={handleOpen}
+                   href="/pages/loanapplication/employmentstatus"
+                   sx={{ backgroundColor: 'white', color: 'black' }}
+                   >
+                  <HomeCreditLogo />
+                  </Button>
+                  
+                  {/* <Button onClick={handleOpen}>
+                    <HomeCreditLogo />
+                    <Modal open={open} onClose={handleClose}>
+                      <Box sx={style}>
+                        <Stack alignItems="center" justifyContent="center">
+                          <Typography variant="h4">
+                            Terms and Conditions
+                          </Typography>
+                          <Box sx={{ m: 1 }} />
+                          <FirebaseModalTAC />
+                        </Stack>
+                      </Box>
+                    </Modal>
+                  </Button> */}
+                </Avatar>
+                <Avatar
+                  sx={{
+                    height: "50px",
+                    width: "150px",
+                    backgroundColor: "white",
+                  }}
+                  variant="rounded"
+                >
+                  <Button onClick={handleOpen}
+                   href="/pages/loanapplication/employmentstatus"
+                   sx={{ backgroundColor: 'white', color: 'black' }}
+                   >
+                 <CashaloLogo />
+                  </Button>
+                  
+                </Avatar>
+                <Avatar
+                  sx={{
+                    height: "50px",
+                    width: "150px",
+                    backgroundColor: "white",
+                  }}
+                  variant="rounded"
+                >
+                  View All
+                </Avatar>
+              </Stack>
+            </Box>
+          </Grid>
+          {/* <Grid
+            item
+            sx={12}
+            container
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Box m="auto">
+              <Button
+                sx={{
+                  backgroundColor: "white",
+                  color: "black",
+                  width: "250px",
+                }}
+                variant="contained"
+                href="account"
+                size="medium"
+              >
+                Manage Linked Accounts
+              </Button>
+            </Box>
+          </Grid> */}
         </Grid>
       </Grid>
     </>
