@@ -372,9 +372,6 @@ const FirebaseHomepage = (props, { ...others }) => {
                                             <LoanApp />
                                         </Stack>
                                     </Button>
-                                    <Typography color="white">
-                                        <center>Loan</center>
-                                        <center>&nbsp;&nbsp;&nbsp;</center>
                                     <Typography color="white">Loan
                                     </Typography>
                                 </Stack>

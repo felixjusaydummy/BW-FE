@@ -190,8 +190,8 @@ const FirebaseChangePassword = ({ ...others }) => {
             const user = result.user;
             console.log(JSON.stringify(user))
             console.log("User is verified")
-            window.open('/dashboard/default')
-            window.close('/pages/login/login3')
+            window.open('/')
+            window.close('pages/changepassword/changepassword3')
         }).catch((error) => {
             // User couldn't sign in (bad verification code?)
             alert("Invalid OTP")
