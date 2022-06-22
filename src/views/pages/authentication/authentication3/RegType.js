@@ -23,7 +23,7 @@ const Cancel = (e) =>{
     window.open('/pages/login/login3')
 }
 
-const Login = () => {
+const RegType = () => {
     const theme = useTheme();
     const matchDownSM = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -122,4 +122,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default RegType;
