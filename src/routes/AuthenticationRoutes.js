@@ -9,6 +9,7 @@ const AuthLogin3 = Loadable(lazy(() => import('views/pages/authentication/authen
 const AuthRegister3 = Loadable(lazy(() => import('views/pages/authentication/authentication3/Register3')));
 const FindAccount3 = Loadable(lazy(() => import('views/pages/authentication/authentication3/FindAccount3')));
 const ChangePassword3 = Loadable(lazy(() => import('views/pages/authentication/authentication3/ChangePassword3')));
+const RegType = Loadable(lazy(() => import('views/pages/authentication/authentication3/RegType')));
 // homepage routing
 const HomeAccount = Loadable(lazy(() => import('views/pages/authentication/homescreen/Account')));
 const HomeScreen = Loadable(lazy(() => import('views/pages/authentication/homescreen/Homescreen')));
@@ -68,6 +69,10 @@ const AuthenticationRoutes = {
         {
             path: '/pages/changepassword/changepassword3',
             element: <ChangePassword3 />
+        },
+        {
+            path: '/pages/register/type',
+            element: <RegType />
         },
         {
             path: '/pages/homescreen/account',
